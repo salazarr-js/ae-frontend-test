@@ -1,22 +1,39 @@
 <template>
   <div id="app">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis aliquid assumenda iste vitae quo beatae sequi autem facere! Molestias quibusdam ipsam nostrum incidunt suscipit alias dicta nesciunt odio, est deserunt.
+    <Header />
+    <main>
+      <div class="container">
+        <Editor></Editor>
+      </div>
+    </main>
+    <Footer />
   </div>
 </template>
 
 <script>
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Editor from './components/Editor';
 
 export default {
   name: "App",
   components: {
+    Header,
+    Footer,
+    Editor,
   }
 };
 </script>
 
 <style lang="scss">
-  // @import '@/scss/main.scss';
-  
   #app {
-    background-color: $grey-lightest;
+    height         : 100vh;
+    display        : flex;
+    // padding-top    : 3.25rem;
+    flex-direction : column;
+    main {
+      flex: 1;
+      background-color: $white-bis;
+    }
   }
 </style>

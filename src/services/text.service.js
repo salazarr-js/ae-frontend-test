@@ -1,5 +1,5 @@
 export default function getMockText() {
-  return new Promise(function (resolve, reject){
+  return new Promise(function (resolve) {
     resolve("A year ago I was in the audience at a gathering of designers in San Francisco."
       + " There were four designers on stage, and two of them worked for me. I was there to support them."
       + " The topic of design responsibility came up, possibly brought up by one of my designers,"

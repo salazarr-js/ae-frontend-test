@@ -10,6 +10,7 @@
   "dependencies": {
     "bulma": "^0.8.2",
     "core-js": "^3.6.4",
+    "lodash-es": "^4.17.15",
     "vue": "^2.6.11"
   },
   "devDependencies": {

@@ -4,17 +4,30 @@ Front-end Software Developer
 
 ## Context
 
-In the market, there alredy are several good rich text editors, and some of thems are vue compatible like the list in this
-[Medium post](https://medium.com/mounoydev/vue-component-rich-text-editor-wysiwyg-59b57052d5b3),
+There are already several very good rich text editors on the market, full customisable and extendable by plugins, some of them even support `vue` as shown in this [Medium post](https://medium.com/mounoydev/vue-component-rich-text-editor-wysiwyg-59b57052d5b3) 
 
+https://github.com/dok/awesome-text-editing
+
+## Features
+
+## Extra Features
+- [x] Custom Styles using [Bulma](https://bulma.io/)
+- [x] [Sanitized HTML](https://github.com/apostrophecms/sanitize-html)
 
 ## Todos
 
 - [x] Add Bulma, favicons
-- [ ] Add basic folder structure
-- [ ] Add header component
-- [ ] Add Toolbar component
-- [ ] Add editor component
+- [x] Add basic folder structure
+- [x] Add header component
+- [x] Add Toolbar component
+- [x] Add editor component
+- [x] Add bold 
+- [x] Add italic
+- [x] Add underline
+- [x] Add indent
+- [x] Add outdent
+- [x] Add buttons state of selected
+
 - [ ] Show dropdown on selection
 - [ ] Check for Synonyms on api
 - [ ] Replace selected words
