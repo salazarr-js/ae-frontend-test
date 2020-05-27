@@ -2,6 +2,8 @@
 
 Front-end Software Developer
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/af9bf802-302a-443a-81a3-9feaffa8299d/deploy-status)](https://app.netlify.com/sites/vue-text-editor/deploys)
+
 ## Considerations
 https://agileengine.bitbucket.io/fePTOwPmNoGsIUyg/
 
