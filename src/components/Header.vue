@@ -10,25 +10,23 @@
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
 <style lang="scss" scoped>
-  .hero.is-small {
-    .hero-body {
-      padding: 16px;
-      .title {
-        margin      : 0;
-        font-size   : 24px;
-        line-height : 1.35;
-      }
-      .subtitle {
-        margin      : 0;
-        font-size   : 16px;
-        line-height : 1.35;
-      }
+.hero.is-small {
+  .hero-body {
+    padding: 16px;
+    .title {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.35;
+    }
+    .subtitle {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.35;
     }
   }
+}
 </style>

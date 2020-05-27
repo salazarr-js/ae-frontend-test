@@ -11,29 +11,28 @@
 </template>
 
 <script>
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Editor from './components/Editor';
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Editor from "./components/Editor";
 
 export default {
   name: "App",
   components: {
     Header,
     Footer,
-    Editor,
+    Editor
   }
 };
 </script>
 
 <style lang="scss">
-  #app {
-    height         : 100vh;
-    display        : flex;
-    // padding-top    : 3.25rem;
-    flex-direction : column;
-    main {
-      flex: 1;
-      background-color: $white-bis;
-    }
+#app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  main {
+    flex: 1;
+    background-color: $white-bis;
   }
+}
 </style>
