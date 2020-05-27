@@ -9,7 +9,8 @@ There are already several very good rich text editors on the market, full custom
 
 ## Features
 
-## Extra Features
+## Extra Features 
+- [ ]
 - [x] Custom Styles using [Bulma](https://bulma.io/)
 - [ ] 
 - [x] [Sanitized HTML](https://github.com/apostrophecms/sanitize-html)
