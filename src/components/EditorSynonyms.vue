@@ -95,8 +95,9 @@ export default {
     /** REQUEST TO `datamuse` API FOR SYNONYMS */
     getSynonyms: function(wordsArray) {
       return axios
-        .get(`https://api.datamuse.com/words?ml=${wordsArray.join("+")}`)
-        .then(response => {
+        .get(`https://api.datamuse.com/words?ml=${wordsArray.join("+")}&max=10`,
+          { crossdomain: true }
+        ).then(response => {
           // return axios.get(`https://api.datamuse.com/words?rel_syn=${wordsArray.join('+')}`).then(response => {
           this.words = response.data.slice(0, 10).map(syn => syn.word);
         });
