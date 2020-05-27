@@ -48,7 +48,7 @@
       id="color-picker" 
       type="color"
       style='display: none;'
-      @change="onColorChange($event)"
+      @input="onColorChange($event)"
     />
     <label
       for="color-picker"
