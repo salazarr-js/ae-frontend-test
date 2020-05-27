@@ -1,6 +1,8 @@
 import Vue from "vue";
 import App from "./App.vue";
 
+/** ELEMENTs COMPONENTS */
+import "@/plugins/element.js";
 /** MAIN STYLES */
 import "./scss/main.scss";
 

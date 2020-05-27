@@ -14,6 +14,7 @@ https://prosemirror.net/docs/guide/
 
 ## Extra Features 
 
+- [x] Tooltip, ColorPicker [Element UI](https://element.eleme.io) component
 - [ ]
 - [x] Custom Styles using [Bulma](https://bulma.io/)
 - [ ] 

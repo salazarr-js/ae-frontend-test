@@ -1,116 +1,125 @@
 <template>
   <div class="editor-toolbar">
-    <button
-      class="editor-button"
-      title="Undo"
-      @click="applyFormat('undo')"
-    >
-      <i class="fas fa-undo"></i>
-    </button>
-    <button
-      class="editor-button"
-      title="Redo"
-      @click="applyFormat('redo')"
-    >
-      <i class="fas fa-redo"></i>
-    </button>
+    <el-tooltip placement="top" content="Undo" visible-arrow="false">
+      <button class="editor-button" title="Undo" @click="applyFormat('undo')">
+        <i class="fas fa-undo"></i>
+      </button>
+    </el-tooltip>
+    <el-tooltip placement="top" content="Redo">
+      <button class="editor-button" title="Redo" @click="applyFormat('redo')">
+        <i class="fas fa-redo"></i>
+      </button>
+    </el-tooltip>
 
     <div class="separator"></div>
 
-    <button
-      class="editor-button"
-      title="Bold"
-      @click="applyFormat('bold')"
-      :class="{ active: styles.bold }"
-    >
-      <i class="fas fa-bold"></i>
-    </button>
+    <el-tooltip placement="top" content="Bold">
+      <button
+        class="editor-button"
+        title="Bold"
+        @click="applyFormat('bold')"
+        :class="{ active: styles.bold }"
+      >
+        <i class="fas fa-bold"></i>
+      </button>
+    </el-tooltip>
 
-    <button
-      class="editor-button"
-      title="Italic"
-      @click="applyFormat('italic')"
-      :class="{ active: styles.italic }"
-    >
-      <i class="fas fa-italic"></i>
-    </button>
+    <el-tooltip placement="top" content="Italic">
+      <button
+        class="editor-button"
+        title="Italic"
+        @click="applyFormat('italic')"
+        :class="{ active: styles.italic }"
+      >
+        <i class="fas fa-italic"></i>
+      </button>
+    </el-tooltip>
 
-    <button
-      class="editor-button"
-      title="Underline"
-      @click="applyFormat('underline')"
-      :class="{ active: styles.underline }"
-    >
-      <i class="fas fa-underline"></i>
-    </button>
+    <el-tooltip placement="top" content="Underline">
+      <button
+        class="editor-button"
+        title="Underline"
+        @click="applyFormat('underline')"
+        :class="{ active: styles.underline }"
+      >
+        <i class="fas fa-underline"></i>
+      </button>
+    </el-tooltip>
 
-    <input 
-      id="color-picker" 
+    <input
+      id="color-picker"
       type="color"
-      style='display: none;'
+      style="display: none;"
       @input="onColorChange($event)"
     />
-    <label
-      for="color-picker"
-      class="editor-button"
-      title="Font color"
-    >
+    <label for="color-picker" class="editor-button" title="Font color">
       <i class="fas fa-font"></i>
     </label>
 
     <div class="separator"></div>
-    
-    <button
-      class="editor-button"
-      title="Justify Left"
-      @click="applyFormat('justifyLeft')"
-      :class="{ active: styles.justifyLeft }"
-    >
-      <i class="fas fa-align-left"></i>
-    </button>
-    <button
-      class="editor-button"
-      title="Justify Center"
-      @click="applyFormat('justifyCenter')"
-      :class="{ active: styles.justifyCenter }"
-    >
-      <i class="fas fa-align-center"></i>
-    </button>
-    <button
-      class="editor-button"
-      title="Justify Right"
-      @click="applyFormat('justifyRight')"
-      :class="{ active: styles.justifyRight }"
-    >
-      <i class="fas fa-align-right"></i>
-    </button>
+
+    <el-tooltip placement="top" content="Justify Left">
+      <button
+        class="editor-button"
+        title="Justify Left"
+        @click="applyFormat('justifyLeft')"
+        :class="{ active: styles.justifyLeft }"
+      >
+        <i class="fas fa-align-left"></i>
+      </button>
+    </el-tooltip>
+
+    <el-tooltip placement="top" content="Justify Center">
+      <button
+        class="editor-button"
+        title="Justify Center"
+        @click="applyFormat('justifyCenter')"
+        :class="{ active: styles.justifyCenter }"
+      >
+        <i class="fas fa-align-center"></i>
+      </button>
+    </el-tooltip>
+
+    <el-tooltip placement="top" content="Justify Right">
+      <button
+        class="editor-button"
+        title="Justify Right"
+        @click="applyFormat('justifyRight')"
+        :class="{ active: styles.justifyRight }"
+      >
+        <i class="fas fa-align-right"></i>
+      </button>
+    </el-tooltip>
 
     <div class="separator"></div>
 
-    <button
-      class="editor-button"
-      title="Outdent"
-      @click="applyFormat('outdent')"
-    >
-      <i class="fas fa-outdent"></i>
-    </button>
-    <button
-      class="editor-button"
-      title="Indent"
-      @click="applyFormat('indent')"
-    >
-      <i class="fas fa-indent"></i>
-    </button>
+    <el-tooltip placement="top" content="Outdent">
+      <button
+        class="editor-button"
+        title="Outdent"
+        @click="applyFormat('outdent')"
+      >
+        <i class="fas fa-outdent"></i>
+      </button>
+    </el-tooltip>
+
+    <el-tooltip placement="top" content="Indent">
+      <button class="editor-button" title="Indent" @click="applyFormat('indent')">
+        <i class="fas fa-indent"></i>
+      </button>
+    </el-tooltip>
 
     <div class="separator"></div>
 
-    <button
-      class="editor-button"
-      title="Remove Format"
-      @click="applyFormat('removeFormat')"
-    >
-      <i class="fas fa-remove-format"></i>
-    </button>
+    <el-tooltip placement="top" content="Remove Format">
+      <button
+        class="editor-button"
+        title="Remove Format"
+        @click="applyFormat('removeFormat')"
+      >
+        <i class="fas fa-remove-format"></i>
+      </button>
+    </el-tooltip>
   </div>
 </template>
 
@@ -118,8 +127,8 @@
 import debounce from "lodash-es/debounce";
 
 export default {
- data: function() {
-   return {
+  data: function() {
+    return {
       styles: {
         bold: false,
         italic: false,
@@ -128,7 +137,7 @@ export default {
         justifyCenter: false,
         justifyRight: false
       }
-    }
+    };
   },
   created() {
     // SUBSCRIBE TO `selection` EVENT
@@ -148,14 +157,14 @@ export default {
     }, 200),
     /** */
     onColorChange: function(event) {
-      this.applyFormat('foreColor', event.target.value)
+      this.applyFormat("foreColor", event.target.value);
     }
   },
   /** RELEASE RESOURCES */
   beforeDestroy() {
     document.removeEventListener("selectionchange", this.onSelectionChange);
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
