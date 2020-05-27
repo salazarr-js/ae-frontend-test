@@ -1,22 +1,49 @@
 <template>
-  <div
-    class="dropdown synonyms-conteiner"
-    :class="{ 'is-active': words.length }"
-    :style="position"
-  >
-    <div class="dropdown-menu" role="menu">
-      <div class="dropdown-content">
-        <a
-          href="#"
-          class="dropdown-item"
-          v-for="word in words"
-          :key="word"
-          @click="selectSyn(word)"
-          >{{ word }}</a
-        >
+  <transition name="el-fade-in">
+    <div v-if="show">
+
+      <div
+        class="dropdown synonyms-conteiner is-active"
+        :style="position"
+      >
+        <div class="dropdown-menu" role="menu">
+          <div class="dropdown-content">
+            <div class="dropdown-item buttons are-small">
+              <button class="button">
+                <span class="icon is-small">
+                  <i class="fas fa-bold"></i>
+                </span>
+              </button>
+              <button class="button">
+                <span class="icon is-small">
+                  <i class="fas fa-italic"></i>
+                </span>
+              </button>
+              <button class="button">
+                <span class="icon is-small">
+                  <i class="fas fa-underline"></i>
+                </span>
+              </button>
+            </div>
+            
+            <hr class="dropdown-divider">
+
+            <div class="scroll">
+              <a
+                href="#"
+                class="dropdown-item"
+                v-for="word in words"
+                :key="word"
+                @click="selectSyn(word)"
+                >{{ word }}</a
+              >
+            </div>
+          </div>
+        </div>
       </div>
+
     </div>
-  </div>
+  </transition>
 </template>
 
 <script>
@@ -31,7 +58,9 @@ export default {
       position: {
         top: 0,
         left: 0
-      }
+      },
+      show: false,
+      loading: false
     };
   },
   created() {
@@ -42,6 +71,7 @@ export default {
     /** DEBOUNCED `selectionchange` EVENT HANDLER */
     onSelectionChange: debounce(function() {
       this.words = [];
+      this.show = false;
       this.selection = document.getSelection();
 
       if (this.selection.rangeCount) {
@@ -57,6 +87,8 @@ export default {
         .trim()
         .split(" ");
       if (words.length == 1 && words[0].length) {
+        this.show = true;
+        this.loading = true;
         this.getSynonyms(words);
       }
     }, 300),
@@ -89,18 +121,36 @@ export default {
 
 <style lang="scss" scoped>
 .synonyms-conteiner {
-  opacity: 0;
   z-index: 9999;
   position: fixed;
   transform: translateY(24px) translateX((190 / 2) * -1px);
-  transition: opacity 0.2s ease-in-out;
-  &.is-active {
-    opacity: 1;
-  }
   .dropdown-menu {
     .dropdown-content {
+      display: flex;
       overflow: auto;
-      max-height: 180px;
+      max-height: 230px;
+      flex-direction: column;
+      .dropdown-divider {
+        margin: 4px 0;
+      }
+      .buttons {
+        margin: 0;
+        padding: 0 8px;
+        text-align: center;
+        .button {
+          color: $grey;
+          width: 32px;
+          border: none;
+          height: 32px;
+          padding: 0;
+          font-size: 16px !important;
+          margin-bottom: 0;
+        }
+      }
+      .scroll {
+        flex: 1;
+        overflow: auto;
+      }
     }
   }
 }

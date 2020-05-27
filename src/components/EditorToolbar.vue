@@ -1,12 +1,12 @@
 <template>
   <div class="editor-toolbar">
     <el-tooltip placement="top" content="Undo" visible-arrow="false">
-      <button class="editor-button" title="Undo" @click="applyFormat('undo')">
+      <button class="editor-button" @click="applyFormat('undo')">
         <i class="fas fa-undo"></i>
       </button>
     </el-tooltip>
     <el-tooltip placement="top" content="Redo">
-      <button class="editor-button" title="Redo" @click="applyFormat('redo')">
+      <button class="editor-button" @click="applyFormat('redo')">
         <i class="fas fa-redo"></i>
       </button>
     </el-tooltip>
@@ -16,7 +16,6 @@
     <el-tooltip placement="top" content="Bold">
       <button
         class="editor-button"
-        title="Bold"
         @click="applyFormat('bold')"
         :class="{ active: styles.bold }"
       >
@@ -27,7 +26,6 @@
     <el-tooltip placement="top" content="Italic">
       <button
         class="editor-button"
-        title="Italic"
         @click="applyFormat('italic')"
         :class="{ active: styles.italic }"
       >
@@ -38,7 +36,6 @@
     <el-tooltip placement="top" content="Underline">
       <button
         class="editor-button"
-        title="Underline"
         @click="applyFormat('underline')"
         :class="{ active: styles.underline }"
       >
@@ -52,16 +49,16 @@
       style="display: none;"
       @input="onColorChange($event)"
     />
-    <label for="color-picker" class="editor-button" title="Font color">
-      <i class="fas fa-font"></i>
-    </label>
-
+    <el-tooltip placement="top" content="Font Color">
+      <label for="color-picker" class="editor-button">
+        <i class="fas fa-font"></i>
+      </label>
+    </el-tooltip>
     <div class="separator"></div>
 
     <el-tooltip placement="top" content="Justify Left">
       <button
         class="editor-button"
-        title="Justify Left"
         @click="applyFormat('justifyLeft')"
         :class="{ active: styles.justifyLeft }"
       >
@@ -72,7 +69,6 @@
     <el-tooltip placement="top" content="Justify Center">
       <button
         class="editor-button"
-        title="Justify Center"
         @click="applyFormat('justifyCenter')"
         :class="{ active: styles.justifyCenter }"
       >
@@ -83,7 +79,6 @@
     <el-tooltip placement="top" content="Justify Right">
       <button
         class="editor-button"
-        title="Justify Right"
         @click="applyFormat('justifyRight')"
         :class="{ active: styles.justifyRight }"
       >
@@ -96,7 +91,6 @@
     <el-tooltip placement="top" content="Outdent">
       <button
         class="editor-button"
-        title="Outdent"
         @click="applyFormat('outdent')"
       >
         <i class="fas fa-outdent"></i>
@@ -104,7 +98,7 @@
     </el-tooltip>
 
     <el-tooltip placement="top" content="Indent">
-      <button class="editor-button" title="Indent" @click="applyFormat('indent')">
+      <button class="editor-button" @click="applyFormat('indent')">
         <i class="fas fa-indent"></i>
       </button>
     </el-tooltip>
@@ -114,7 +108,6 @@
     <el-tooltip placement="top" content="Remove Format">
       <button
         class="editor-button"
-        title="Remove Format"
         @click="applyFormat('removeFormat')"
       >
         <i class="fas fa-remove-format"></i>
