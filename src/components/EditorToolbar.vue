@@ -10,7 +10,7 @@
     <button
       class="editor-button"
       title="Redo"
-      @click="applyFormat('Redo')"
+      @click="applyFormat('redo')"
     >
       <i class="fas fa-redo"></i>
     </button>
@@ -44,22 +44,73 @@
       <i class="fas fa-underline"></i>
     </button>
 
+    <input 
+      id="color-picker" 
+      type="color"
+      style='display: none;'
+      @change="onColorChange($event)"
+    />
+    <label
+      for="color-picker"
+      class="editor-button"
+      title="Font color"
+    >
+      <i class="fas fa-font"></i>
+    </label>
+
+    <div class="separator"></div>
+    
+    <button
+      class="editor-button"
+      title="Justify Left"
+      @click="applyFormat('justifyLeft')"
+      :class="{ active: styles.justifyLeft }"
+    >
+      <i class="fas fa-align-left"></i>
+    </button>
+    <button
+      class="editor-button"
+      title="Justify Center"
+      @click="applyFormat('justifyCenter')"
+      :class="{ active: styles.justifyCenter }"
+    >
+      <i class="fas fa-align-center"></i>
+    </button>
+    <button
+      class="editor-button"
+      title="Justify Right"
+      @click="applyFormat('justifyRight')"
+      :class="{ active: styles.justifyRight }"
+    >
+      <i class="fas fa-align-right"></i>
+    </button>
+
     <div class="separator"></div>
 
     <button
       class="editor-button"
       title="Outdent"
+      @click="applyFormat('outdent')"
     >
       <i class="fas fa-outdent"></i>
     </button>
     <button
       class="editor-button"
       title="Indent"
+      @click="applyFormat('indent')"
     >
       <i class="fas fa-indent"></i>
     </button>
 
     <div class="separator"></div>
+
+    <button
+      class="editor-button"
+      title="Remove Format"
+      @click="applyFormat('removeFormat')"
+    >
+      <i class="fas fa-remove-format"></i>
+    </button>
   </div>
 </template>
 
@@ -72,7 +123,10 @@ export default {
       styles: {
         bold: false,
         italic: false,
-        underline: false
+        underline: false,
+        justifyLeft: false,
+        justifyCenter: false,
+        justifyRight: false
       }
     }
   },
@@ -91,7 +145,11 @@ export default {
       Object.keys(this.styles).forEach(key => {
         this.styles[key] = document.queryCommandState(key);
       });
-    }, 200)
+    }, 200),
+    /** */
+    onColorChange: function(event) {
+      this.applyFormat('foreColor', event.target.value)
+    }
   },
   /** RELEASE RESOURCES */
   beforeDestroy() {
@@ -105,6 +163,7 @@ export default {
   padding: 4px 16px;
   display: flex;
   position: relative;
+  flex-wrap: wrap;
   box-shadow: 0px 8px 16px white;
   align-items: center;
 
@@ -119,6 +178,8 @@ export default {
     position: absolute;
   }
   &:before {
+    left: 4px;
+    right: 4px;
     box-shadow: 2px 2px 4px rgba($grey-dark, 0.12);
     border-radius: 25%;
   }
@@ -131,7 +192,7 @@ export default {
     border: none;
     cursor: pointer;
     height: 32px;
-    display: inline-block;
+    display: inline-flex;
     outline: none;
     z-index: 1;
     padding: 0;
@@ -139,9 +200,11 @@ export default {
     overflow: hidden;
     position: relative;
     background: none;
+    align-items: center;
     user-select: none;
     margin-right: 2px;
     border-radius: 4px;
+    justify-content: center;
 
     &:last-child {
       margin-right: 0;

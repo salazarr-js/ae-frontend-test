@@ -1,7 +1,7 @@
 <template>
   <div class="editor-container" :class="{ 'is-focused': isFocused }">
     <EditorToolbar />
-    <EditorSynPanel />
+    <EditorSynonyms />
 
     <div
       class="editor"
@@ -16,14 +16,14 @@
 
 <script>
 import EditorToolbar from "@/components/EditorToolbar.vue";
-import EditorSynPanel from "@/components/EditorSynPanel.vue";
+import EditorSynonyms from "@/components/EditorSynonyms.vue";
 
 import getMockText from "@/services/text.service";
 
 export default {
   components: {
     EditorToolbar,
-    EditorSynPanel
+    EditorSynonyms
   },
   data: function() {
     return {

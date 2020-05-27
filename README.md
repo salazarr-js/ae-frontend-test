@@ -6,15 +6,16 @@ Front-end Software Developer
 
 There are already several very good rich text editors on the market, full customisable and extendable by plugins, some of them even support `vue` as shown in this [Medium post](https://medium.com/mounoydev/vue-component-rich-text-editor-wysiwyg-59b57052d5b3), and in this [repo](https://github.com/dok/awesome-text-editing)
 
+https://prosemirror.net/docs/guide/
 
 ## Features
 
 ## Extra Features 
+
 - [ ]
 - [x] Custom Styles using [Bulma](https://bulma.io/)
 - [ ] 
-- [x] [Sanitized HTML](https://github.com/apostrophecms/sanitize-html)
-- [x] Lint code
+- [x] Linted code
 
 ## Todos
 
