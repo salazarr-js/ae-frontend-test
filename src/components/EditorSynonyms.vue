@@ -1,11 +1,7 @@
 <template>
   <transition name="el-fade-in">
     <div v-if="show">
-
-      <div
-        class="dropdown synonyms-conteiner is-active"
-        :style="position"
-      >
+      <div class="dropdown synonyms-conteiner is-active" :style="position">
         <div class="dropdown-menu" role="menu">
           <div class="dropdown-content">
             <div class="dropdown-item buttons are-small">
@@ -25,12 +21,16 @@
                 </span>
               </button>
             </div>
-            
-            <hr class="dropdown-divider">
+
+            <hr class="dropdown-divider" />
 
             <div class="scroll">
-
-              <button v-if="isLoading" class="button is-primary is-outlined is-fullwidth is-large is-loading">Loading</button>
+              <button
+                v-if="isLoading"
+                class="button is-primary is-outlined is-fullwidth is-large is-loading"
+              >
+                Loading
+              </button>
 
               <a
                 href="#"
@@ -44,7 +44,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </transition>
 </template>
@@ -98,14 +97,17 @@ export default {
     /** REQUEST TO `datamuse` API FOR SYNONYMS */
     getSynonyms: function(wordsArray) {
       return axios
-        .get(`https://api.datamuse.com/words?ml=${wordsArray.join("+")}&max=10`,
+        .get(
+          `https://api.datamuse.com/words?ml=${wordsArray.join("+")}&max=10`,
           { crossdomain: true }
-        ).then(response => {
+        )
+        .then(response => {
           this.isLoading = false;
           this.words = response.data.slice(0, 10).map(syn => syn.word);
-        }).catch(error => {
+        })
+        .catch(error => {
           this.isLoading = false;
-          console.log('datamuse error:', error);
+          console.log("datamuse error:", error);
         });
     },
     /** */
@@ -121,7 +123,7 @@ export default {
     /** APPPLY FORMAT TO SELECTED TEXT */
     applyFormat: function(name, value = null) {
       document.execCommand(name, false, value);
-    },
+    }
   },
   beforeDestroy() {
     // RELEASE RESOURCES

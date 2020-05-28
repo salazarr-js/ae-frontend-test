@@ -89,10 +89,7 @@
     <div class="separator"></div>
 
     <el-tooltip placement="top" content="Outdent">
-      <button
-        class="editor-button"
-        @click="applyFormat('outdent')"
-      >
+      <button class="editor-button" @click="applyFormat('outdent')">
         <i class="fas fa-outdent"></i>
       </button>
     </el-tooltip>
@@ -106,10 +103,7 @@
     <div class="separator"></div>
 
     <el-tooltip placement="top" content="Remove Format">
-      <button
-        class="editor-button"
-        @click="applyFormat('removeFormat')"
-      >
+      <button class="editor-button" @click="applyFormat('removeFormat')">
         <i class="fas fa-remove-format"></i>
       </button>
     </el-tooltip>
