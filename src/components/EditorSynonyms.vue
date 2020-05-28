@@ -9,17 +9,17 @@
         <div class="dropdown-menu" role="menu">
           <div class="dropdown-content">
             <div class="dropdown-item buttons are-small">
-              <button class="button">
+              <button class="button" @click="applyFormat('bold')">
                 <span class="icon is-small">
                   <i class="fas fa-bold"></i>
                 </span>
               </button>
-              <button class="button">
+              <button class="button" @click="applyFormat('italic')">
                 <span class="icon is-small">
                   <i class="fas fa-italic"></i>
                 </span>
               </button>
-              <button class="button">
+              <button class="button" @click="applyFormat('underline')">
                 <span class="icon is-small">
                   <i class="fas fa-underline"></i>
                 </span>
@@ -29,6 +29,9 @@
             <hr class="dropdown-divider">
 
             <div class="scroll">
+
+              <button v-if="isLoading" class="button is-primary is-outlined is-fullwidth is-large is-loading">Loading</button>
+
               <a
                 href="#"
                 class="dropdown-item"
@@ -60,7 +63,7 @@ export default {
         left: 0
       },
       show: false,
-      loading: false
+      isLoading: false
     };
   },
   created() {
@@ -88,7 +91,7 @@ export default {
         .split(" ");
       if (words.length == 1 && words[0].length) {
         this.show = true;
-        this.loading = true;
+        this.isLoading = true;
         this.getSynonyms(words);
       }
     }, 300),
@@ -98,8 +101,11 @@ export default {
         .get(`https://api.datamuse.com/words?ml=${wordsArray.join("+")}&max=10`,
           { crossdomain: true }
         ).then(response => {
-          // return axios.get(`https://api.datamuse.com/words?rel_syn=${wordsArray.join('+')}`).then(response => {
+          this.isLoading = false;
           this.words = response.data.slice(0, 10).map(syn => syn.word);
+        }).catch(error => {
+          this.isLoading = false;
+          console.log('datamuse error:', error);
         });
     },
     /** */
@@ -111,7 +117,11 @@ export default {
       this.selection.removeAllRanges();
       this.selection = null;
       this.words = [];
-    }
+    },
+    /** APPPLY FORMAT TO SELECTED TEXT */
+    applyFormat: function(name, value = null) {
+      document.execCommand(name, false, value);
+    },
   },
   beforeDestroy() {
     // RELEASE RESOURCES
@@ -147,6 +157,9 @@ export default {
           font-size: 16px !important;
           margin-bottom: 0;
         }
+      }
+      .is-loading {
+        border: none;
       }
       .scroll {
         flex: 1;
