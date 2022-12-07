@@ -1,10 +1,11 @@
-# Advanced Text Editor
+# Agile Engine Front End Test
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/af9bf802-302a-443a-81a3-9feaffa8299d/deploy-status)](https://app.netlify.com/sites/vue-text-editor/deploys)
+Test project to apply as Middle Front End Developer in Agile Engine
+
 
 `Front-end Software Developer` test project to apply in Agile Engine
 
-- [Demo](https://vue-text-editor.netlify.app/)
+- [Demo](https://ae-frontend-test.vercel.app/)
 - [Requirements](https://agileengine.bitbucket.io/fePTOwPmNoGsIUyg/)
 
 
@@ -34,26 +35,16 @@ By consideration of this test, the entire text editor is built from scratch usin
 - [x] Responsive design
 - [x] Extra formatting actions `Font Color`, `Justify left`, `Justify center`, `Justify right`, `Indent`,`Outdent`, `Remove format`
 
+## Prerequisites
+Before you begin, make sure your development environment includes Node.js, an npm package manager and the version control system GIT.
+
+Node.js version `14.x` or higher
 
 ## Project setup
 ```
 npm install
-```
 
-### Compiles and hot-reloads for development
+npm run serve # Compiles and hot-reloads for development
+npm run build # Compiles and minifies for production
+npm run lint # Lints and fixes files
 ```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
