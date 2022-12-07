@@ -50,15 +50,15 @@ export default {
 
 <style lang="scss" scoped>
 .editor-container {
-  margin: 16px auto;
+  margin: 0 auto;
   height: 480px;
   display: flex;
   position: relative;
-  // overflow: hidden;
-  max-width: 520px;
+  overflow: hidden;
+  max-width: 720px;
   transition: all 0.3s ease-in-out;
   box-shadow: 2px 2px 8px rgba($grey-dark, 0.08);
-  border-radius: 4px;
+  border-radius: 8px;
   flex-direction: column;
   background-color: $white;
   &.is-focused {

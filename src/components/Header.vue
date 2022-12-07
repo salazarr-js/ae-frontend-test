@@ -1,5 +1,5 @@
 <template>
-  <header class="hero is-primary is-small">
+  <header class="hero is-primary is-light is-small">
     <div class="hero-body">
       <div class="container">
         <h1 class="title">Advanced text editor</h1>
@@ -17,6 +17,9 @@ export default {};
 .hero.is-small {
   .hero-body {
     padding: 16px;
+    .container {
+      max-width: 720px;
+    }
     .title {
       margin: 0;
       font-size: 24px;

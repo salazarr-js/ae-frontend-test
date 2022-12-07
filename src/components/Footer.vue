@@ -3,7 +3,7 @@
     <div class="container">
       <a
         class="footer-link"
-        href="https://github.com/salazarr-js/vue-ae-frontend-test"
+        href="https://github.com/salazarr-js/ae-frontend-test"
       >
         <h2>Jose Salazar</h2>
         <p>2020 © AgileEngine, LLC</p>
