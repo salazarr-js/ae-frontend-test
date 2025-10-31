@@ -1,6 +1,6 @@
-# Agile Engine Front End Test
+# 💻 Agile Engine - `Middle Front End` test
 
-Test project to apply as `Middle Front End Developer` in Agile Engine
+Middle Front End technical test for [Agile Engine](https://agileengine.com/)
 
 - [Demo](https://ae-frontend-test.vercel.app/)
 - [Requirements](https://agileengine.bitbucket.io/fePTOwPmNoGsIUyg/)
